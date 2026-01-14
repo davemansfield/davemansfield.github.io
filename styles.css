@@ -6,48 +6,265 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: 
+        linear-gradient(rgba(10, 30, 20, 0.75), rgba(5, 20, 15, 0.85)),
+        url('https://wallpaperaccess.com/full/2767405.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    padding: 20px;
+    color: #e8f5e9;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     width: 100%;
-    max-width: 800px;
     text-align: center;
 }
 
 .content {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 60px 40px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 80px);
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.logo-icon {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0 0 10px rgba(74, 222, 128, 0.4));
 }
 
 .logo {
     font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin: 0;
     letter-spacing: 2px;
+    color: #4ade80;
+    text-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
 }
 
 .heading {
     font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     line-height: 1.2;
+    color: #d1fae5;
+}
+
+.university-tagline-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.university-logo {
+    height: 80px;
+    width: auto;
+    opacity: 0.9;
+    filter: brightness(1.1);
+}
+
+.university-tagline {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    color: #86efac;
+    font-style: italic;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
 }
 
 .description {
     font-size: 1.2rem;
     margin-bottom: 40px;
-    opacity: 0.9;
+    color: #a7f3d0;
+    line-height: 1.6;
+}
+
+.funding-section {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.25) 100%);
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.funding-section::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+.funding-label {
+    font-size: 1.1rem;
+    color: #ffffff;
+    opacity: 0.95;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.funding-amount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.growing {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ffffff;
+    opacity: 0.85;
+    font-style: italic;
+}
+
+.team-section-box {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.team-section {
+    padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 80px);
+    position: relative;
+    margin-bottom: 0;
+    background: rgba(35, 65, 45, 0.3);
+}
+
+.team-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #d1fae5;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.team-scroll {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 10px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #22c55e rgba(34, 197, 94, 0.1);
+}
+
+.team-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.team-scroll::-webkit-scrollbar-track {
+    background: rgba(16, 185, 129, 0.2);
+    border-radius: 10px;
+}
+
+.team-scroll::-webkit-scrollbar-thumb {
+    background: #10b981;
+    border-radius: 10px;
+}
+
+.team-scroll::-webkit-scrollbar-thumb:hover {
+    background: #059669;
+}
+
+.team-member {
+    flex: 0 0 280px;
+    background: rgba(20, 45, 30, 0.5);
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.team-member:hover::before {
+    left: 100%;
+}
+
+.team-member:hover {
+    background: rgba(20, 45, 30, 0.7);
+    transform: translateY(-5px);
+}
+
+.team-headshot {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.team-member:hover .team-headshot {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    border-color: #4ade80;
+}
+
+.team-headshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #d1fae5;
+    margin-bottom: 8px;
+}
+
+.team-position {
+    font-size: 1rem;
+    color: #4ade80;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.team-bio {
+    font-size: 0.9rem;
+    color: #a7f3d0;
     line-height: 1.6;
 }
 
@@ -60,12 +277,15 @@ body {
 }
 
 .countdown-item {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
+    background: rgba(16, 185, 129, 0.1);
     padding: 20px;
     min-width: 100px;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.countdown-item:hover {
+    background: rgba(16, 185, 129, 0.15);
 }
 
 .countdown-number {
@@ -73,13 +293,16 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 5px;
+    color: #4ade80;
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
 }
 
 .countdown-label {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    opacity: 0.8;
+    color: #a7f3d0;
+    font-weight: 600;
 }
 
 .email-form {
@@ -96,59 +319,141 @@ body {
     min-width: 250px;
     padding: 15px 20px;
     border: none;
-    border-radius: 50px;
+    border-bottom: 2px solid rgba(16, 185, 129, 0.4);
     font-size: 1rem;
-    background: rgba(255, 255, 255, 0.9);
-    color: #333;
+    background: rgba(20, 45, 30, 0.4);
+    color: #d1fae5;
     outline: none;
     transition: all 0.3s ease;
 }
 
 .email-form input:focus {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    border-bottom-color: #10b981;
+    background: rgba(20, 45, 30, 0.6);
 }
 
 .email-form input::placeholder {
-    color: #999;
+    color: #86efac;
 }
 
 .email-form button {
     padding: 15px 40px;
     border: none;
-    border-radius: 50px;
     font-size: 1rem;
     font-weight: 600;
-    background: #fff;
-    color: #667eea;
+    background: #10b981;
+    color: #ffffff;
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.email-form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.email-form button:hover::before {
+    left: 100%;
 }
 
 .email-form button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    background: #059669;
 }
 
 .email-form button:active {
-    transform: translateY(0);
+    transform: scale(0.98);
 }
 
 .form-message {
     margin-top: 20px;
     font-size: 0.9rem;
     min-height: 20px;
-    opacity: 0.9;
+    color: #a7f3d0;
 }
 
 @media (max-width: 768px) {
     .content {
-        padding: 40px 30px;
+        padding: clamp(40px, 8vw, 60px) clamp(15px, 5vw, 30px);
+    }
+
+    .team-section {
+        padding: clamp(40px, 8vw, 60px) clamp(15px, 5vw, 30px);
+    }
+
+    .logo-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo-icon {
+        width: 60px;
+        height: 60px;
     }
 
     .logo {
         font-size: 2rem;
+    }
+
+    .funding-amount {
+        font-size: 2.2rem;
+    }
+
+    .funding-label {
+        font-size: 1rem;
+    }
+
+    .university-tagline-container {
+        gap: 10px;
+        margin: 25px 0;
+    }
+
+    .university-logo {
+        height: 60px;
+    }
+
+    .university-tagline {
+        font-size: 0.9rem;
+    }
+
+    .team-heading {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    .team-scroll {
+        gap: 20px;
+        padding: 15px 10px;
+    }
+
+    .team-member {
+        flex: 0 0 250px;
+        padding: 20px;
+    }
+
+    .team-headshot {
+        width: 100px;
+        height: 100px;
+    }
+
+    .team-name {
+        font-size: 1.1rem;
+    }
+
+    .team-position {
+        font-size: 0.9rem;
+    }
+
+    .team-bio {
+        font-size: 0.85rem;
     }
 
     .heading {

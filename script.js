@@ -6,7 +6,7 @@ function updateCountdown() {
     const distance = launchDate - now;
 
     if (distance < 0) {
-        document.getElementById('countdown').innerHTML = '<p>We\'re Live!</p>';
+        document.getElementById('countdown').style.display = 'none';
         return;
     }
 
@@ -34,7 +34,7 @@ document.getElementById('emailForm').addEventListener('submit', function(e) {
     // Here you would typically send the email to your backend
     // For now, we'll just show a success message
     messageEl.textContent = `Thanks! We'll notify you at ${email} when we launch.`;
-    messageEl.style.color = '#fff';
+    messageEl.style.color = '#a7f3d0';
     
     // Clear the input
     document.getElementById('email').value = '';
