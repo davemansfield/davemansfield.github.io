@@ -1,0 +1,23 @@
+SEO and discoverability
+
+Missing meta description tags
+Missing Open Graph tags (for social sharing)
+Missing Twitter Card tags
+No favicon
+No robots.txt
+No sitemap.xml
+No structured data (JSON-LD) for search engines
+
+Accessibility and UX
+No skip navigation link
+Missing loading states for form submissions
+No error handling for network failures
+Legal and compliance
+No Privacy Policy page
+No Terms of Service page
+No cookie consent banner (if needed)
+
+Additional features
+No analytics - comapre google analytics vs microsoft clarity
+No 404 error page
+No manifest.json (for PWA capabilities)
