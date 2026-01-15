@@ -19,6 +19,16 @@ body {
     padding: 0;
 }
 
+.header-panel {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.95) 0%, rgba(5, 150, 105, 0.95) 100%);
+    padding: 20px clamp(30px, 5vw, 80px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
 .container {
     width: 100%;
     text-align: center;
@@ -34,24 +44,47 @@ body {
 .logo-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 15px;
-    margin-bottom: 30px;
 }
 
 .logo-icon {
-    width: 80px;
-    height: 80px;
-    filter: drop-shadow(0 0 10px rgba(74, 222, 128, 0.4));
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
 .logo {
-    font-size: 3rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin: 0;
     letter-spacing: 2px;
-    color: #4ade80;
-    text-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button {
+    padding: 12px 30px;
+    border: 2px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+
+.contact-button:hover {
+    background: #ffffff;
+    color: #10b981;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button:active {
+    transform: translateY(0);
 }
 
 .heading {
@@ -381,6 +414,11 @@ body {
 }
 
 @media (max-width: 768px) {
+    .header-panel {
+        padding: 15px clamp(20px, 5vw, 30px);
+        flex-wrap: wrap;
+    }
+
     .content {
         padding: clamp(40px, 8vw, 60px) clamp(15px, 5vw, 30px);
     }
@@ -390,17 +428,21 @@ body {
     }
 
     .logo-container {
-        flex-direction: column;
         gap: 10px;
     }
 
     .logo-icon {
-        width: 60px;
-        height: 60px;
+        width: 40px;
+        height: 40px;
     }
 
     .logo {
-        font-size: 2rem;
+        font-size: 1.3rem;
+    }
+
+    .contact-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 
     .funding-amount {
@@ -432,6 +474,7 @@ body {
     .team-scroll {
         gap: 20px;
         padding: 15px 10px;
+        justify-content: flex-start;
     }
 
     .team-member {
