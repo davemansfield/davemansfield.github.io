@@ -4,19 +4,57 @@
     box-sizing: border-box;
 }
 
+/* Scroll Animation Styles */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-animate-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.scroll-animate-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.scroll-animate-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.scroll-animate-delay-4 {
+    transition-delay: 0.4s;
+}
+
+.scroll-animate-delay-5 {
+    transition-delay: 0.5s;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-image: 
-        linear-gradient(rgba(10, 30, 20, 0.75), rgba(5, 20, 15, 0.85)),
-        url('https://wallpaperaccess.com/full/2767405.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background: #000000;
     min-height: 100vh;
     color: #e8f5e9;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+
+/* Interactive Swarm Canvas - only in content section */
+#swarm-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: auto;
 }
 
 .header-panel {
@@ -31,6 +69,7 @@ body {
     align-items: center;
     gap: 20px;
     position: relative;
+    z-index: 10;
 }
 
 .header-panel::before {
@@ -46,6 +85,8 @@ body {
 .container {
     width: 100%;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 .content {
@@ -53,6 +94,21 @@ body {
     width: 100%;
     box-sizing: border-box;
     position: relative;
+}
+
+/* Homepage content with swarm canvas - centered layout */
+.content:has(#swarm-canvas) {
+    overflow: hidden; /* Contain the canvas */
+    min-height: calc(100vh - 81px); /* Full viewport height minus header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content > *:not(#swarm-canvas) {
+    position: relative;
+    z-index: 1; /* Content above canvas */
 }
 
 .logo-container {
@@ -69,7 +125,7 @@ body {
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     font-weight: 700;
     margin: 0;
     letter-spacing: 2px;
@@ -190,6 +246,66 @@ body {
     font-style: italic;
 }
 
+/* Applications Section */
+.applications-section {
+    width: 100%;
+    padding: clamp(60px, 8vw, 80px) clamp(20px, 5vw, 80px);
+    background: rgba(16, 185, 129, 0.05);
+    border-top: 1px solid rgba(16, 185, 129, 0.2);
+    border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.applications-heading {
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+    margin: 0 0 clamp(30px, 4vw, 50px) 0;
+    font-weight: 600;
+    color: #d1fae5;
+    text-align: center;
+}
+
+.applications-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(15px, 3vw, 30px);
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.application-button {
+    width: 250px;
+    height: 70px;
+    padding: 0 20px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 2px solid rgba(16, 185, 129, 0.4);
+    border-radius: 12px;
+    color: #d1fae5;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.3;
+}
+
+.application-button:hover {
+    background: rgba(16, 185, 129, 0.25);
+    border-color: rgba(16, 185, 129, 0.7);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.application-button:active {
+    transform: translateY(-1px);
+}
+
 .team-section-box {
     width: 100%;
     margin: 0;
@@ -200,7 +316,8 @@ body {
     padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 80px);
     position: relative;
     margin-bottom: 0;
-    background: rgba(35, 65, 45, 0.3);
+    background: transparent;
+    border-top: 2px solid rgba(16, 185, 129, 0.2);
 }
 
 .team-heading {
@@ -244,7 +361,9 @@ body {
 
 .team-member {
     flex: 0 0 280px;
-    background: rgba(20, 45, 30, 0.5);
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 8px;
     padding: 25px;
     text-align: center;
     transition: all 0.3s ease;
@@ -268,8 +387,10 @@ body {
 }
 
 .team-member:hover {
-    background: rgba(20, 45, 30, 0.7);
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.4);
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.15);
 }
 
 .team-headshot {
@@ -555,6 +676,10 @@ body {
     .content {
         padding: clamp(40px, 8vw, 60px) clamp(15px, 5vw, 30px);
     }
+    
+    .content:has(#swarm-canvas) {
+        min-height: calc(100vh - 70px); /* Adjust for smaller header on mobile */
+    }
 
     .team-section {
         padding: clamp(40px, 8vw, 60px) clamp(15px, 5vw, 30px);
@@ -570,7 +695,7 @@ body {
     }
 
     .logo {
-        font-size: 1.3rem;
+        font-size: 1.7rem;
     }
 
     .contact-button {
@@ -593,6 +718,20 @@ body {
 
     .university-logo {
         height: 60px;
+    }
+    
+    .applications-section {
+        padding: clamp(40px, 8vw, 60px) clamp(15px, 5vw, 30px);
+    }
+    
+    .applications-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .application-button {
+        width: 250px;
+        max-width: 90%;
     }
 
     .university-tagline {
@@ -702,7 +841,8 @@ body {
     padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 80px);
     position: relative;
     margin-bottom: 0;
-    background: rgba(20, 45, 30, 0.2);
+    background: transparent;
+    border-top: 2px solid rgba(16, 185, 129, 0.2);
 }
 
 .collaborators-heading {
@@ -727,7 +867,8 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: rgba(35, 65, 45, 0.3);
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.2);
     border-radius: 10px;
     transition: all 0.3s ease;
     max-width: 250px;
@@ -735,9 +876,10 @@ body {
 }
 
 .collaborator-logo-item:hover {
-    background: rgba(35, 65, 45, 0.5);
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.4);
     transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.15);
 }
 
 .collaborator-logo {
@@ -786,6 +928,8 @@ body {
     border-top: 1px solid rgba(16, 185, 129, 0.3);
     padding: 40px clamp(20px, 5vw, 80px);
     margin-top: 0;
+    position: relative;
+    z-index: 10;
 }
 
 .footer-content {

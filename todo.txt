@@ -1,5 +1,7 @@
 SEO and discoverability
 
+add ukras and ampi logos
+
 Missing meta description tags
 Missing Open Graph tags (for social sharing)
 Missing Twitter Card tags
@@ -21,3 +23,5 @@ Additional features
 No analytics - comapre google analytics vs microsoft clarity
 No 404 error page
 No manifest.json (for PWA capabilities)
+
+if they send an enquirey forms should swap to being a thank you message
