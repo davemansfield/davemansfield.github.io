@@ -98,7 +98,7 @@ if (emailForm) {
                 },
                 body: JSON.stringify({
                     email: email,
-                    _subject: 'New Email Notification Signup - Lune Robotics',
+                    _subject: 'New Email Notification Signup - Lune Systems',
                     _format: 'plain'
                 })
             });

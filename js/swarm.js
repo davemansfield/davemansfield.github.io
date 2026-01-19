@@ -348,8 +348,8 @@ class SwarmAnimation {
                                     Math.sin(boid.position.y * 0.1) * (1 - depth) * 0.4;
             const finalAngle = boid.angle + depthAngleOffset;
             
-            // Size based on depth - made bigger for more visibility
-            const sizeScale = (0.5 + 1.5 * depth) * this.scale * 1.2;
+            // Size based on depth - made bigger for better mobile visibility
+            const sizeScale = (0.5 + 1.5 * depth) * this.scale * 1.5;
             
             // Calculate morphing phase for this boid
             const morphPhase = this.frame * 0.02 * boid.morphSpeed + boid.morphOffset;
@@ -365,15 +365,15 @@ class SwarmAnimation {
             const cos = Math.cos(finalAngle);
             const sin = Math.sin(finalAngle);
             
-            // Opacity
-            const baseAlpha = 0.3 + 0.7 * depth;
+            // Opacity - increased for better mobile visibility
+            const baseAlpha = 0.5 + 0.5 * depth;
             const fadeTime = this.frame * 0.05 * boid.fadeSpeed + boid.fadeOffset;
-            const fadeFactor = 0.4 + 0.6 * (0.5 + 0.5 * Math.sin(fadeTime));
+            const fadeFactor = 0.6 + 0.4 * (0.5 + 0.5 * Math.sin(fadeTime));
             const alpha = baseAlpha * fadeFactor;
             
-            // Color intensity
-            const colorIntensity = 0.6 + 0.4 * depth;
-            const brightness = 0.5 + 0.5 * colorIntensity;
+            // Color intensity - brighter for mobile visibility
+            const colorIntensity = 0.7 + 0.3 * depth;
+            const brightness = 0.7 + 0.3 * colorIntensity;
             const r = Math.floor(this.baseGreen.r * brightness);
             const g = Math.floor(this.baseGreen.g * brightness);
             const b = Math.floor(this.baseGreen.b * brightness);
