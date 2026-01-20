@@ -147,5 +147,21 @@ const observer = new IntersectionObserver((entries) => {
 document.addEventListener('DOMContentLoaded', () => {
     const animateElements = document.querySelectorAll('.scroll-animate');
     animateElements.forEach(el => observer.observe(el));
+    
+    // ============================================
+    // EXPLORE BUTTON SMOOTH SCROLL
+    // ============================================
+    const exploreButton = document.getElementById('exploreButton');
+    if (exploreButton) {
+        exploreButton.addEventListener('click', () => {
+            const whoAreWeSection = document.getElementById('who-are-we');
+            if (whoAreWeSection) {
+                whoAreWeSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
 });
 
