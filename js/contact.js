@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: name,
                 email: email,
                 message: message,
-                _subject: 'New Contact Form Submission - Lune Systems',
+                _subject: 'New Contact Form Submission - Lune Intelligent Systems',
                 _format: 'plain'
             };
             
