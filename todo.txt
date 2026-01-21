@@ -1,27 +1,69 @@
 SEO and discoverability
-
-add ukras and ampi logos
-
-Missing meta description tags
-Missing Open Graph tags (for social sharing)
-Missing Twitter Card tags
-No favicon
-No robots.txt
-No sitemap.xml
-No structured data (JSON-LD) for search engines
+====================================
+Missing meta description tags for all pages - ✅ COMPLETED
+Missing Open Graph tags (for social sharing) - [no action needed waiting for logo]
+Missing Twitter Card tags - [no action needed waiting for logo]
+Missing canonical URLs on all pages - [no action needed waiting on domain name]
+No theme-color meta tag - ✅ COMPLETED
+No favicon.ico - [no action needed - favicon is being designed]
+No apple-touch-icon -[no action needed waiting for logo]
+No multiple sized favicons (16x16, 32x32, 192x192, 512x512) - [no action needed favicon is being designed]
+No robots.txt - update domain when got
+No sitemap.xml - update domain when got
+No structured data (JSON-LD) for search engines - update logo URL when we have it, update linked in profile
+Survey button on index.html has "#" href (not functional) - [no action needed survey is still being designed]
 
 Accessibility and UX
-No skip navigation link
-Missing loading states for form submissions
-No error handling for network failures
-Legal and compliance
-No Privacy Policy page
-No Terms of Service page
-No cookie consent banner (if needed)
+====================================
+No skip navigation link - ✅ COMPLETED
+Missing ARIA labels on SVG logos - ✅ COMPLETED
+No visible focus states for keyboard navigation - ✅ COMPLETED
+Images need lazy loading (loading="lazy" attribute) - ✅ COMPLETED
+Missing meaningful alt text on team member headshots - ✅ COMPLETED
+Form validation could be improved (real-time feedback) - ✅ COMPLETED
 
-Additional features
-No analytics - comapre google analytics vs microsoft clarity
+Performance
+====================================
+No preload for critical resources (fonts, CSS) 
+Scripts not using async/defer where appropriate
+No image optimization notes/process
+No compression setup (gzip/brotli)
+
+Branding Consistency
+====================================
+nuclear.html uses "Lune Robotics" instead of "Lune Intelligent Systems" - ✅ COMPLETED (file deleted)
+nuclear.html uses wrong email domain (lunerobotics.com vs lunesystems.com) - ✅ COMPLETED (file deleted)
+Inconsistent styling - styles.css in both root AND css/ folder - ✅ COMPLETED (root styles.css deleted)
+nuclear.html links to styles.css in root instead of css/styles.css - ✅ COMPLETED (file deleted)
+
+Legal and compliance
+====================================
+No Privacy Policy page - ✅ COMPLETED (privacy.html created)
+No Terms of Service page - [No action needed - not required for landing page]
+No cookie consent banner (if needed for EU/UK visitors) - ✅ COMPLETED (Cookiebot integrated)
+No security.txt file (recommended for security contact info) - [Low priority - can add later]
+
+Additional features - Not needed for now maybe when site grows
+====================================
 No 404 error page
 No manifest.json (for PWA capabilities)
+No humans.txt (optional but nice for credits)
+No print stylesheet
+No breadcrumb navigation for subpages
+No social share buttons - [No action needed we only use linked in]
 
-if they send an enquirey forms should swap to being a thank you message
+Technical/Security - revisit when site is live
+====================================
+No Content Security Policy (CSP) headers consideration
+No referrer policy meta tag
+No subresource integrity (SRI) for external resources
+
+Forms UX Improvements
+====================================
+Form should show persistent thank you message after submission - ✅ COMPLETED
+Contact form shows spinning loader during submission - ✅ COMPLETED
+Consider adding honeypot field for spam protection - [No action needed: spam protection provided by formspree]
+
+Content Issues
+====================================
+Missing company logo/brand assets in multiple formats - [No action needed: logo is currently being designed]

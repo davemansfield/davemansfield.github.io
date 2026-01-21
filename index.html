@@ -3,16 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lune Intelligent Systems develops autonomous swarm robotics for nuclear decommissioning, environmental monitoring, gas quantification, and search & rescue operations. Backed by Lancaster University research.">
+    <meta name="theme-color" content="#10b981">
     <title>Lune Intelligent Systems - Coming Soon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Cookiebot - Cookie Consent Management -->
+    <!-- Get your Cookiebot ID from: https://www.cookiebot.com/ -->
+    <!-- Replace YOUR-COOKIEBOT-ID with your actual ID -->
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="YOUR-COOKIEBOT-ID" type="text/javascript" async></script>
+    
+    <!-- Structured Data - Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Lune Intelligent Systems",
+      "url": "https://lunesystems.com",
+      "logo": "https://lunesystems.com/assets/images/logo.png",
+      "description": "Pioneering autonomous swarm robotics for extreme environments. Cooperative robotic swarms for nuclear decommissioning, environmental monitoring, gas quantification, and search & rescue operations.",
+      "foundingDate": "2024",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Lancaster University, Bailrigg",
+        "addressLocality": "Lancaster",
+        "postalCode": "LA1 4YW",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@lunesystems.com",
+        "contactType": "Customer Service"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/lunesystems"
+      ]
+    }
+    </script>
 </head>
 <body>
+    <!-- Skip Navigation Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <header class="header-panel">
         <div class="logo-container">
-            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lune Intelligent Systems logo">
                 <circle cx="50" cy="50" r="45" fill="#10b981" opacity="0.3"/>
                 <path d="M 30 50 Q 50 30 70 50 Q 50 70 30 50" fill="#4ade80"/>
                 <circle cx="40" cy="45" r="8" fill="#d1fae5"/>
@@ -25,12 +63,12 @@
     </header>
     
     <div class="container">
-        <div class="content">
+        <div class="content" id="main-content">
             <!-- Interactive Swarm Background -->
             <canvas id="swarm-canvas"></canvas>
             
             <h2 class="heading scroll-animate">Swarm Intelligence is Here</h2>
-            <p class="description scroll-animate scroll-animate-delay-1">Cooperative robotic swarms for environmental monitoring taking off soon!</p>
+            <p class="description scroll-animate scroll-animate-delay-1">Cooperative robotic swarms for real-world challenges taking off soon!</p>
 
             <form class="email-form scroll-animate scroll-animate-delay-2" id="emailForm">
                 <input 
@@ -49,7 +87,7 @@
             
             <button class="explore-button scroll-animate scroll-animate-delay-4" id="exploreButton">
                 <span>Explore</span>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Down arrow">
                     <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
             </button>
@@ -62,7 +100,8 @@
                     <h2 class="who-are-we-tagline">Pioneering the Future of Autonomous Swarms</h2>
                 </div>
                 <div class="who-are-we-right">
-                    <p class="who-are-we-description">We are a team of robotics researchers and engineers from Lancaster University, dedicated to bringing cutting-edge swarm intelligence technology from the lab to real-world applications. With over 40 years of collective experience in autonomous systems, we're transforming how industries approach complex challenges through coordinated multi-robot solutions that are smarter, safer, and more efficient than traditional methods.</p>
+                    <p class="who-are-we-description">Born from leading robotics research at Lancaster University, we build autonomous swarms that think, adapt, and act together. Our systems allow multiple robots to coordinate as a unified team, exploring uncertain and extreme environments, responding dynamically to change, and making intelligent decisions through distributed AI.</p>
+                    <p class="who-are-we-description">By working collectively rather than individually, our swarms unlock capabilities no single robot can achieve, tackling complex challenges with speed, resilience, and intelligence.</p>
                 </div>
             </div>
         </div>
@@ -71,47 +110,52 @@
             <h3 class="section-title section-title-centered">The Problem</h3>
             <div class="problem-content">
                 <div class="problem-card">
-                    <h4 class="problem-title">Data Assumptions</h4>
-                    <p class="problem-description">Traditional systems rely on pre-mapped environments and predictable conditions. Real-world scenarios are dynamic and uncertain.</p>
+                    <h4 class="problem-title">Limited Spatiotemporal Data</h4>
+                    <p class="problem-description">Single robots measure one location at a time, forcing assumptions about spatial patterns. Real-world environments need simultaneous multi-point data.</p>
                 </div>
                 <div class="problem-card">
                     <h4 class="problem-title">Limited Mission Time</h4>
-                    <p class="problem-description">Single robot deployments face battery constraints and coverage limitations. Critical tasks demand extended operational capacity.</p>
+                    <p class="problem-description">Battery constraints and coverage limitations make solo robots slow. Critical tasks in complex environments take too long with individual systems.</p>
                 </div>
                 <div class="problem-card">
-                    <h4 class="problem-title">Risk of Failure</h4>
-                    <p class="problem-description">Individual robot failure means mission failure in traditional approaches. High-stakes environments cannot afford single points of failure.</p>
+                    <h4 class="problem-title">Single Points of Failure</h4>
+                    <p class="problem-description">One robot fails, mission fails. High-stakes environments can't afford this vulnerability with no backup plan.</p>
                 </div>
                 <div class="problem-card">
-                    <h4 class="problem-title">No Adaptation</h4>
-                    <p class="problem-description">Conventional systems follow fixed protocols without learning. Complex challenges require intelligent response to changing conditions.</p>
+                    <h4 class="problem-title">No Autonomous Exploration</h4>
+                    <p class="problem-description">Traditional robots need explicit instructions on where to go. Multiple reconnaissance missions waste time before real work begins.</p>
                 </div>
             </div>
+        </div>
+        
+        <div class="survey-cta-section scroll-animate">
+            <p class="survey-cta-text">Join us in shaping swarm robotics. Your feedback in our 2-minute survey directly influences our direction.</p>
+            <a href="#" class="survey-button" target="_blank" rel="noopener noreferrer">Take the Survey</a>
         </div>
         
         <div class="applications-section scroll-animate">
             <h3 class="applications-heading">Our Applications</h3>
             <div class="applications-buttons">
-                <a href="pages/nuclear.html" class="application-card">
-                    <img src="assets/images/svgs/nuclear.svg" alt="Nuclear icon" class="app-icon">
+                <div class="application-card">
+                    <img src="assets/images/svgs/nuclear.svg" alt="Nuclear icon" class="app-icon" loading="lazy">
                     <h4 class="app-title">Nuclear Decommissioning</h4>
-                    <p class="app-description">Advanced swarm robotics for safe nuclear facility inspection. Reducing human exposure in hazardous environments.</p>
-                </a>
-                <a href="pages/environmental.html" class="application-card">
-                    <img src="assets/images/svgs/env-monitoring.svg" alt="Environmental icon" class="app-icon">
+                    <p class="app-description">Simultaneous facility inspection and radiation mapping. Drastically reducing mission time while eliminating human exposure.</p>
+                </div>
+                <div class="application-card">
+                    <img src="assets/images/svgs/env-monitoring.svg" alt="Environmental icon" class="app-icon" loading="lazy">
                     <h4 class="app-title">Environmental Monitoring</h4>
-                    <p class="app-description">Comprehensive ecosystem tracking with distributed sensor networks. Real-time data collection across vast natural habitats.</p>
-                </a>
-                <a href="pages/methane.html" class="application-card">
-                    <img src="assets/images/svgs/gas-monitorign.svg" alt="Gas monitoring icon" class="app-icon">
-                    <h4 class="app-title">Methane Quantification</h4>
-                    <p class="app-description">Precise detection and measurement of methane emissions. Supporting climate change mitigation through advanced monitoring.</p>
-                </a>
-                <a href="pages/rescue.html" class="application-card">
-                    <img src="assets/images/svgs/search-and-resuce.svg" alt="Search and rescue icon" class="app-icon">
+                    <p class="app-description">Autonomous teams gathering environmental data simultaneously from fields to cities. Coordinated sensing delivers comprehensive, dynamic environmental data, faster.</p>
+                </div>
+                <div class="application-card">
+                    <img src="assets/images/svgs/gas-monitorign.svg" alt="Gas monitoring icon" class="app-icon" loading="lazy">
+                    <h4 class="app-title">Gas Quantification</h4>
+                    <p class="app-description">Coordinated gas monitoring for landfills, oil & gas, and energy facilities. Simultaneous measurements deliver detailed auditable, spatiotemporal data.</p>
+                </div>
+                <div class="application-card">
+                    <img src="assets/images/svgs/search-and-resuce.svg" alt="Search and rescue icon" class="app-icon" loading="lazy">
                     <h4 class="app-title">Search and Rescue</h4>
                     <p class="app-description">Rapid deployment swarms for emergency response operations. Coordinated search patterns covering large areas efficiently.</p>
-                </a>
+                </div>
             </div>
         </div>
         
@@ -122,7 +166,7 @@
                 <div class="team-scroll">
                     <div class="team-member">
                         <div class="team-headshot">
-                            <img src="assets/images/headshots/dave_head.png" alt="Dave Mansfield">
+                            <img src="assets/images/headshots/dave_head.png" alt="Headshot of Dave Mansfield, Entrepreneurial Lead and Founder" loading="lazy">
                         </div>
                         <div class="team-name">Dave Mansfield</div>
                         <div class="team-position">Entrepreneurial Lead and Founder</div>
@@ -130,20 +174,23 @@
                     </div>
                     <div class="team-member">
                         <div class="team-headshot">
-                            <img src="assets/images/headshots/allahyar_head.jpg" alt="Team Member 2">
+                            <img src="assets/images/headshots/allahyar_head.jpg" alt="Headshot of Dr. Allahyar Montazeri, Principal Investigator and Founder" loading="lazy">
                         </div>
                         <div class="team-name">Dr. Allahyar Montazeri</div>
                         <div class="team-position">Principal Investigator and Founder</div>
-                        <div class="team-bio">LIP SUM</div>
+                        <div class="team-bio">I am a researcher in control engineering, robotics, and autonomous systems, with expertise in adaptive and learning-based control. I lead advanced manufacturing research at Lancaster’s Intelligent, Robotic and Autonomous Systems Centre.</div>
                     </div>
                     <div class="team-member">
                         <div class="team-headshot">
-                            <img src="assets/images/headshots/songlin_head.jpeg" alt="Team Member 3">
+                            <img src="assets/images/headshots/songlin_head.jpeg" alt="Headshot of Songlin Ma, Senior Engineer and Founder" loading="lazy">
                         </div>
                         <div class="team-name">Songlin Ma</div>
                         <div class="team-position">Senior Engineer and Founder</div>
                         <div class="team-bio">I have over 11 years of experience in robotics research. I am passionate about the potential of multi-agent systems and swarm technologies to unlock greater value for robots across various industries.</div>
                     </div>
+                </div>
+                <div class="team-contact-button-container">
+                    <a href="contact.html" class="team-contact-button">Connect with our team</a>
                 </div>
             </div>
         </div>
@@ -153,19 +200,19 @@
                 <h3 class="collaborators-heading">Our Collaborators</h3>
                 <div class="collaborators-logos">
                     <div class="collaborator-logo-item">
-                        <img src="assets/images/logos/LU---Logo---Positive-_RGB_.png" alt="Lancaster University" class="collaborator-logo">
+                        <img src="assets/images/logos/LU---Logo---Positive-_RGB_.png" alt="Lancaster University logo" class="collaborator-logo" loading="lazy">
                     </div>
                     <div class="collaborator-logo-item">
-                        <img src="assets/images/logos/ICURe-Logo-Discover-768x321-196967700.png" alt="ICURe" class="collaborator-logo">
+                        <img src="assets/images/logos/ICURe-Logo-Discover-768x321-196967700.png" alt="ICURe logo" class="collaborator-logo" loading="lazy">
                     </div>
                     <div class="collaborator-logo-item">
-                        <img src="assets/images/logos/new-ukri-logo.jpeg" alt="UKRI" class="collaborator-logo">
+                        <img src="assets/images/logos/new-ukri-logo.jpeg" alt="UKRI logo" class="collaborator-logo" loading="lazy">
                     </div>
                     <div class="collaborator-logo-item">
-                        <img src="assets/images/logos/ampi-logo.png" alt="AMPI" class="collaborator-logo">
+                        <img src="assets/images/logos/ampi-logo.png" alt="AMPI logo" class="collaborator-logo" loading="lazy">
                     </div>
                     <div class="collaborator-logo-item">
-                        <img src="assets/images/logos/uk-ras-logo.jpeg" alt="UK-RAS" class="collaborator-logo">
+                        <img src="assets/images/logos/uk-ras-logo.jpeg" alt="UK-RAS logo" class="collaborator-logo" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -173,9 +220,9 @@
     </div>
 
     <footer class="footer">
-        <div class="footer-content">
+        <div class="footer-content footer-content-extended">
             <div class="footer-logo">
-                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lune Intelligent Systems logo">
                     <circle cx="50" cy="50" r="45" fill="#10b981" opacity="0.3"/>
                     <path d="M 30 50 Q 50 30 70 50 Q 50 70 30 50" fill="#4ade80"/>
                     <circle cx="40" cy="45" r="8" fill="#d1fae5"/>
@@ -193,6 +240,13 @@
             </div>
             
             <div class="footer-section">
+                <h3 class="footer-section-title">Legal</h3>
+                <p class="footer-section-content">
+                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                </p>
+            </div>
+            
+            <div class="footer-section">
                 <h3 class="footer-section-title">Location</h3>
                 <p class="footer-section-content">
                     Lancaster University,<br>
@@ -205,7 +259,7 @@
                 <h3 class="footer-section-title">Socials</h3>
                 <div class="footer-socials">
                     <a href="https://www.linkedin.com/company/lunesystems" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="LinkedIn icon">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                     </a>
@@ -213,6 +267,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- Microsoft Clarity - Uncomment when ready to enable -->
+    <!-- Get your Clarity ID from: https://clarity.microsoft.com/ -->
+    <!--
+    <script type="text/plain" data-cookieconsent="statistics">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "YOUR-CLARITY-PROJECT-ID");
+    </script>
+    -->
 
     <script src="js/swarm.js"></script>
     <script src="js/script.js"></script>

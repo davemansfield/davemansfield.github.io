@@ -17,6 +17,71 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!contactForm) return;
 
+    // ============================================
+    // REAL-TIME FORM VALIDATION
+    // ============================================
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+
+    // Email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Add real-time validation for email
+    if (emailInput) {
+        emailInput.addEventListener('input', function() {
+            const email = emailInput.value.trim();
+            
+            if (email && !emailRegex.test(email)) {
+                emailInput.style.borderBottomColor = '#ef4444';
+            } else if (email) {
+                emailInput.style.borderBottomColor = '#10b981';
+            } else {
+                emailInput.style.borderBottomColor = 'rgba(16, 185, 129, 0.4)';
+            }
+        });
+
+        emailInput.addEventListener('blur', function() {
+            const email = emailInput.value.trim();
+            if (email && !emailRegex.test(email)) {
+                emailInput.style.borderBottomColor = '#ef4444';
+            }
+        });
+    }
+
+    // Add real-time validation for required fields
+    if (nameInput) {
+        nameInput.addEventListener('blur', function() {
+            if (!nameInput.value.trim()) {
+                nameInput.style.borderBottomColor = '#ef4444';
+            } else {
+                nameInput.style.borderBottomColor = '#10b981';
+            }
+        });
+
+        nameInput.addEventListener('input', function() {
+            if (nameInput.value.trim()) {
+                nameInput.style.borderBottomColor = '#10b981';
+            }
+        });
+    }
+
+    if (messageInput) {
+        messageInput.addEventListener('blur', function() {
+            if (!messageInput.value.trim()) {
+                messageInput.style.borderBottomColor = '#ef4444';
+            } else {
+                messageInput.style.borderBottomColor = '#10b981';
+            }
+        });
+
+        messageInput.addEventListener('input', function() {
+            if (messageInput.value.trim()) {
+                messageInput.style.borderBottomColor = '#10b981';
+            }
+        });
+    }
+
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
@@ -49,10 +114,11 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Show loading state
-        const originalButtonText = submitButton.textContent;
+        // Show loading state with spinner
+        const originalButtonText = submitButton.innerHTML;
         submitButton.disabled = true;
-        submitButton.textContent = 'Submitting...';
+        submitButton.innerHTML = '<span class="spinner"></span> Sending...';
+        submitButton.classList.add('loading');
         formMessage.textContent = '';
         formMessage.style.color = '';
 
@@ -82,14 +148,28 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if (response.ok) {
-                formMessage.textContent = 'Thank you for your message! We\'ll get back to you soon.';
-                formMessage.style.color = '#a7f3d0';
-                contactForm.reset();
+                // Hide the form with smooth transition
+                contactForm.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                contactForm.style.opacity = '0';
+                contactForm.style.transform = 'translateY(-20px)';
                 
-                // Clear message after 5 seconds
+                // After animation, hide form and show thank you message
                 setTimeout(() => {
-                    formMessage.textContent = '';
-                }, 5000);
+                    contactForm.style.display = 'none';
+                    
+                    // Show persistent thank you message
+                    formMessage.innerHTML = `
+                        <div class="thank-you-message">
+                            <div class="thank-you-icon">✓</div>
+                            <h3>Thank You!</h3>
+                            <p>Your message has been sent successfully.</p>
+                            <p>We typically respond within 24 hours.</p>
+                            <p class="email-note">Check your inbox (and spam folder) for our reply to <strong>${email}</strong></p>
+                            <a href="index.html" class="back-home-button">← Back to Home</a>
+                        </div>
+                    `;
+                    formMessage.style.color = '#a7f3d0';
+                }, 500);
             } else {
                 const data = await response.json();
                 throw new Error(data.error || 'Submission failed');
@@ -101,7 +181,8 @@ document.addEventListener('DOMContentLoaded', function() {
         } finally {
             // Reset button state
             submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
+            submitButton.innerHTML = originalButtonText;
+            submitButton.classList.remove('loading');
         }
     });
 

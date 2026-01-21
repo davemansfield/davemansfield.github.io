@@ -1,0 +1,24 @@
+# robots.txt for Lune Intelligent Systems
+# This file tells search engines which pages they can crawl
+
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Don't waste time crawling these file types
+Disallow: /*.json$
+Disallow: /*.txt$
+Disallow: /README.md
+Disallow: /FORMSFREE_SETUP.md
+
+# Don't index these directories (if they contain development files)
+Disallow: /js/
+Disallow: /css/
+
+# Allow CSS and JS files to be crawled (important for page rendering in search results)
+Allow: /css/styles.css
+Allow: /js/*.js
+
+# Sitemap location (update this URL when you publish)
+Sitemap: https://lunesystems.com/sitemap.xml
+

@@ -36,6 +36,85 @@
     transition-delay: 0.5s;
 }
 
+/* Accessibility - Skip Navigation Link */
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 20px;
+    background: #10b981;
+    color: #ffffff;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    z-index: 9999;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 20px;
+    outline: 3px solid #4ade80;
+    outline-offset: 2px;
+}
+
+/* Accessibility - Visible Focus States for Keyboard Navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #4ade80;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px rgba(74, 222, 128, 0.2);
+}
+
+/* Ensure focus states work on older browsers */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid #4ade80;
+    outline-offset: 2px;
+}
+
+/* Special focus state for contact button */
+.contact-button:focus,
+.contact-button:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+/* Special focus state for dark buttons */
+.submit-button:focus,
+.submit-button:focus-visible,
+.team-contact-button:focus,
+.team-contact-button:focus-visible,
+.survey-button:focus,
+.survey-button:focus-visible {
+    outline: 3px solid #4ade80;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px rgba(74, 222, 128, 0.3);
+}
+
+/* Focus state for footer links */
+.footer-link:focus,
+.footer-link:focus-visible {
+    outline: 2px solid #4ade80;
+    outline-offset: 2px;
+    background: rgba(74, 222, 128, 0.1);
+    border-radius: 3px;
+}
+
+/* Focus state for social links */
+.footer-social-link:focus,
+.footer-social-link:focus-visible {
+    outline: 3px solid #4ade80;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px rgba(74, 222, 128, 0.3);
+}
+
 body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: #000000;
@@ -251,6 +330,16 @@ body {
     padding: 0 20px;
 }
 
+.page-subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #86efac;
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
 .page-paragraph {
     font-size: 1.05rem;
     line-height: 1.8;
@@ -386,9 +475,9 @@ body {
 }
 
 .problem-card {
-    width: 240px;
-    min-width: 240px;
-    padding: 20px 10px;
+    width: 280px;
+    min-width: 280px;
+    padding: 20px 20px;
     background: transparent;
     border: none;
     text-align: center;
@@ -415,6 +504,69 @@ body {
     color: #a7f3d0;
     margin: 0;
     transition: color 0.3s ease;
+}
+
+/* Survey CTA Section */
+.survey-cta-section {
+    width: 100%;
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 5vw, 80px) clamp(40px, 6vw, 60px);
+    background: transparent;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.survey-cta-text {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-weight: 500;
+    color: #a7f3d0;
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.survey-button {
+    padding: 15px 40px;
+    border: 2px solid #10b981;
+    background: rgba(16, 185, 129, 0.15);
+    color: #d1fae5;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.survey-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.survey-button:hover::before {
+    left: 100%;
+}
+
+.survey-button:hover {
+    background: #10b981;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.survey-button:active {
+    transform: translateY(0);
 }
 
 /* Applications Section */
@@ -445,22 +597,21 @@ body {
     overflow-x: auto;
 }
 
-.application-card {
-    width: 240px;
-    min-width: 240px;
-    padding: 20px 10px;
-    background: transparent;
-    border: none;
-    text-decoration: none;
-    text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 16px;
-}
+ .application-card {
+     width: 280px;
+     min-width: 280px;
+     padding: 20px 20px;
+     background: transparent;
+     border: none;
+     text-decoration: none;
+     text-align: center;
+     transition: all 0.3s ease;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: flex-start;
+     gap: 16px;
+ }
 
 .application-card:hover {
     transform: translateY(-4px);
@@ -647,6 +798,54 @@ body {
     font-size: 0.9rem;
     color: #a7f3d0;
     line-height: 1.6;
+}
+
+.team-contact-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.team-contact-button {
+    padding: 15px 40px;
+    border: 2px solid #10b981;
+    background: rgba(16, 185, 129, 0.15);
+    color: #d1fae5;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-contact-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.team-contact-button:hover::before {
+    left: 100%;
+}
+
+.team-contact-button:hover {
+    background: #10b981;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.team-contact-button:active {
+    transform: translateY(0);
 }
 
 .countdown {
@@ -842,6 +1041,32 @@ body {
     min-height: 120px;
 }
 
+/* Form validation states */
+.form-group input.valid,
+.form-group textarea.valid {
+    border-bottom-color: #10b981;
+}
+
+.form-group input.invalid,
+.form-group textarea.invalid {
+    border-bottom-color: #ef4444;
+}
+
+.form-group .validation-message {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    min-height: 20px;
+}
+
+.form-group .validation-message.error {
+    color: #fca5a5;
+}
+
+.form-group .validation-message.success {
+    color: #a7f3d0;
+}
+
 .submit-button {
     width: 100%;
     padding: 15px 40px;
@@ -878,6 +1103,124 @@ body {
 
 .submit-button:active {
     transform: scale(0.98);
+}
+
+/* Loading spinner in submit button */
+.submit-button .spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.submit-button.loading {
+    opacity: 0.9;
+    cursor: not-allowed;
+}
+
+/* Thank you message after form submission */
+.thank-you-message {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(74, 222, 128, 0.15) 100%);
+    border: 2px solid #10b981;
+    border-radius: 12px;
+    padding: 50px 40px;
+    text-align: center;
+    margin-top: 20px;
+    animation: slideUp 0.6s ease;
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.thank-you-icon {
+    width: 80px;
+    height: 80px;
+    background: #10b981;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 3rem;
+    color: white;
+    animation: scaleIn 0.5s ease 0.3s backwards;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.thank-you-message h3 {
+    font-size: 2rem;
+    color: #4ade80;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.thank-you-message p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    color: #d1fae5;
+    line-height: 1.6;
+}
+
+.thank-you-message .email-note {
+    font-size: 0.95rem;
+    color: #a7f3d0;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.thank-you-message .email-note strong {
+    color: #4ade80;
+}
+
+.back-home-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 35px;
+    background: #10b981;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.back-home-button:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.back-home-button:active {
+    transform: translateY(0);
 }
 
 @media (max-width: 768px) {
@@ -968,6 +1311,19 @@ body {
         font-size: 1rem;
     }
 
+    .survey-cta-section {
+        padding: clamp(10px, 2vw, 15px) clamp(15px, 5vw, 30px) clamp(30px, 6vw, 40px);
+        gap: 20px;
+    }
+
+    .survey-cta-text {
+        font-size: 1rem;
+    }
+
+    .survey-button {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+    }
 
     .applications-section {
         padding: clamp(40px, 8vw, 60px) clamp(15px, 5vw, 30px);
@@ -1032,6 +1388,14 @@ body {
         font-size: 0.85rem;
     }
 
+    .team-contact-button-container {
+        margin-top: 30px;
+    }
+
+    .team-contact-button {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+    }
 
     .countdown {
         gap: 10px;
@@ -1080,6 +1444,30 @@ body {
 
     .submit-button {
         padding: 12px 30px;
+        font-size: 0.95rem;
+    }
+    
+    .thank-you-message {
+        padding: 35px 25px;
+    }
+    
+    .thank-you-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .thank-you-message h3 {
+        font-size: 1.6rem;
+    }
+    
+    .thank-you-message p {
+        font-size: 0.95rem;
+    }
+    
+    .back-home-button {
+        padding: 12px 28px;
         font-size: 0.95rem;
     }
 }
@@ -1184,6 +1572,10 @@ body {
     align-items: start;
 }
 
+.footer-content-extended {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+}
+
 .footer-logo {
     display: flex;
     align-items: center;
@@ -1283,6 +1675,82 @@ body {
 
     .footer-socials {
         justify-content: center;
+    }
+}
+
+/* Privacy Policy Page Styles */
+.privacy-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.privacy-section {
+    margin-bottom: 40px;
+}
+
+.privacy-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #d1fae5;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.privacy-subheading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #a7f3d0;
+    margin-bottom: 12px;
+    margin-top: 20px;
+}
+
+.privacy-text {
+    font-size: 1rem;
+    color: #e8f5e9;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.privacy-list {
+    list-style: disc;
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+
+.privacy-list li {
+    font-size: 1rem;
+    color: #e8f5e9;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.privacy-link {
+    color: #4ade80;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.privacy-link:hover {
+    color: #10b981;
+}
+
+@media (max-width: 768px) {
+    .privacy-content {
+        padding: 20px;
+    }
+
+    .privacy-heading {
+        font-size: 1.3rem;
+    }
+
+    .privacy-subheading {
+        font-size: 1.1rem;
+    }
+
+    .privacy-text,
+    .privacy-list li {
+        font-size: 0.95rem;
     }
 }
 
