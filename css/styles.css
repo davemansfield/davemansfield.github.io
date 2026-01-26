@@ -465,13 +465,14 @@ body {
 
 .problem-content {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: clamp(40px, 5vw, 60px);
     flex-wrap: nowrap;
     max-width: 1400px;
     margin: 0 auto;
     overflow-x: auto;
+    padding: 0 clamp(20px, 5vw, 80px);
 }
 
 .problem-card {
@@ -588,13 +589,14 @@ body {
 
 .applications-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: clamp(40px, 5vw, 60px);
     flex-wrap: nowrap;
     max-width: 1400px;
     margin: 0 auto;
     overflow-x: auto;
+    padding: 0 clamp(20px, 5vw, 80px);
 }
 
  .application-card {
@@ -611,6 +613,11 @@ body {
      align-items: center;
      justify-content: flex-start;
      gap: 16px;
+     cursor: pointer;
+     font-family: inherit;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
  }
 
 .application-card:hover {
@@ -619,6 +626,12 @@ body {
 
 .application-card:active {
     transform: translateY(-2px);
+}
+
+.application-card:focus,
+.application-card:focus-visible {
+    outline: none;
+    box-shadow: none;
 }
 
 .app-icon {
@@ -1627,6 +1640,32 @@ body {
 
 .footer-link:hover {
     color: #4ade80;
+}
+
+.footer-contact-button {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 24px;
+    background: rgba(16, 185, 129, 0.2);
+    border: 2px solid #10b981;
+    border-radius: 5px;
+    color: #d1fae5;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.footer-contact-button:hover {
+    background: #10b981;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+
+.footer-contact-button:active {
+    transform: translateY(0);
 }
 
 .footer-socials {

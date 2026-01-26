@@ -20,5 +20,5 @@ Allow: /css/styles.css
 Allow: /js/*.js
 
 # Sitemap location (update this URL when you publish)
-Sitemap: https://lunesystems.com/sitemap.xml
+Sitemap: https://luneintelligentsystems.com/sitemap.xml
 
