@@ -163,5 +163,73 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    
+    // ============================================
+    // HORIZONTAL SCROLL ARROWS AND GRADIENTS
+    // ============================================
+    function setupScrollSection(sectionSelector, containerSelector) {
+        const section = document.querySelector(sectionSelector);
+        const container = document.querySelector(containerSelector);
+        if (!section || !container) return;
+        
+        const scrollArrowLeft = section.querySelector('.scroll-arrow-left');
+        const scrollArrowRight = section.querySelector('.scroll-arrow-right');
+        if (!scrollArrowLeft || !scrollArrowRight) return;
+        
+        function updateScrollState() {
+            const hasOverflow = container.scrollWidth > container.clientWidth;
+            const isAtStart = container.scrollLeft <= 10;
+            const isAtEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 10;
+            
+            // Left arrow and gradient
+            if (hasOverflow && !isAtStart) {
+                scrollArrowLeft.classList.remove('hidden');
+                section.classList.add('show-left-gradient');
+            } else {
+                scrollArrowLeft.classList.add('hidden');
+                section.classList.remove('show-left-gradient');
+            }
+            
+            // Right arrow and gradient
+            if (hasOverflow && !isAtEnd) {
+                scrollArrowRight.classList.remove('hidden');
+                section.classList.add('show-right-gradient');
+            } else {
+                scrollArrowRight.classList.add('hidden');
+                section.classList.remove('show-right-gradient');
+            }
+        }
+        
+        // Click arrows to scroll
+        const scrollAmount = () => container.clientWidth * 0.8;
+        
+        scrollArrowRight.addEventListener('click', () => {
+            container.scrollBy({
+                left: scrollAmount(),
+                behavior: 'smooth'
+            });
+        });
+        
+        scrollArrowLeft.addEventListener('click', () => {
+            container.scrollBy({
+                left: -scrollAmount(),
+                behavior: 'smooth'
+            });
+        });
+        
+        // Update on scroll and resize
+        container.addEventListener('scroll', updateScrollState);
+        window.addEventListener('resize', updateScrollState);
+        
+        // Reset scroll position to start
+        container.scrollLeft = 0;
+        
+        // Initial check
+        updateScrollState();
+    }
+    
+    // Setup both sections
+    setupScrollSection('.applications-section', '.applications-buttons');
+    setupScrollSection('.problem-section', '.problem-content');
 });
 

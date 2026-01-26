@@ -471,33 +471,39 @@ body {
     width: 100%;
     padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 80px);
     background: transparent;
-}
-
-/* Wrapper for gradient fade effect on problem cards */
-.problem-content-wrapper {
     position: relative;
-    max-width: 1400px;
-    margin: 0 auto;
 }
 
-/* Gradient fade on right edge to indicate more content */
-.problem-content-wrapper::after {
+/* Gradient overlays on the section (fixed, don't scroll with content) */
+.problem-section::before,
+.problem-section::after {
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
-    width: 120px;
-    background: linear-gradient(to right, rgba(247, 250, 252, 0) 0%, rgba(247, 250, 252, 0.95) 70%, rgba(247, 250, 252, 1) 100%);
+    width: 200px;
+    height: 100%;
     pointer-events: none;
-    z-index: 2;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-/* Hide gradient on larger screens where everything fits */
-@media (min-width: 1400px) {
-    .problem-content-wrapper::after {
-        display: none;
-    }
+.problem-section::before {
+    left: clamp(20px, 5vw, 80px);
+    background: linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.problem-section::after {
+    right: clamp(20px, 5vw, 80px);
+    background: linear-gradient(to left, #000000 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.problem-section.show-left-gradient::before {
+    opacity: 0.9;
+}
+
+.problem-section.show-right-gradient::after {
+    opacity: 0.9;
 }
 
 .problem-content {
@@ -506,31 +512,20 @@ body {
     align-items: flex-start;
     gap: clamp(40px, 5vw, 60px);
     flex-wrap: nowrap;
+    max-width: 1400px;
+    margin: 0 auto;
     overflow-x: auto;
-    padding: 0 clamp(20px, 5vw, 80px);
+    overflow-y: hidden;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    
-    /* Scrollbar styling */
-    scrollbar-width: thin;
-    scrollbar-color: rgba(16, 185, 129, 0.3) transparent;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    position: relative;
 }
 
+/* Hide scrollbar for Chrome/Safari */
 .problem-content::-webkit-scrollbar {
-    height: 6px;
-}
-
-.problem-content::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.problem-content::-webkit-scrollbar-thumb {
-    background: rgba(16, 185, 129, 0.3);
-    border-radius: 3px;
-}
-
-.problem-content::-webkit-scrollbar-thumb:hover {
-    background: rgba(16, 185, 129, 0.5);
+    display: none;
+    padding: 0 clamp(20px, 5vw, 80px);
 }
 
 .problem-card {
@@ -645,31 +640,40 @@ body {
     text-align: center;
 }
 
-/* Wrapper for gradient fade effect */
-.applications-buttons-wrapper {
+.applications-section {
     position: relative;
-    max-width: 1400px;
-    margin: 0 auto;
 }
 
-/* Gradient fade on right edge to indicate more content */
-.applications-buttons-wrapper::after {
+/* Gradient overlays on the section (fixed, don't scroll with content) */
+.applications-section::before,
+.applications-section::after {
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
-    width: 120px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.95) 70%, rgba(255, 255, 255, 1) 100%);
+    width: 200px;
+    height: 100%;
     pointer-events: none;
-    z-index: 2;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-/* Hide gradient on larger screens where everything fits */
-@media (min-width: 1400px) {
-    .applications-buttons-wrapper::after {
-        display: none;
-    }
+.applications-section::before {
+    left: clamp(20px, 5vw, 80px);
+    background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.applications-section::after {
+    right: clamp(20px, 5vw, 80px);
+    background: linear-gradient(to left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.applications-section.show-left-gradient::before {
+    opacity: 0.9;
+}
+
+.applications-section.show-right-gradient::after {
+    opacity: 0.9;
 }
 
 .applications-buttons {
@@ -678,35 +682,91 @@ body {
     align-items: flex-start;
     gap: clamp(40px, 5vw, 60px);
     flex-wrap: nowrap;
+    max-width: 1400px;
+    margin: 0 auto;
     overflow-x: auto;
+    overflow-y: hidden;
     padding: 0 clamp(20px, 5vw, 80px);
     scroll-behavior: smooth;
-    
-    /* Smooth scrolling on mobile */
-    -webkit-overflow-scrolling: touch;
-    
-    /* Hide scrollbar but keep functionality */
-    scrollbar-width: thin;
-    scrollbar-color: rgba(16, 185, 129, 0.3) transparent;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    position: relative;
 }
 
-/* Webkit scrollbar styling */
+/* Hide scrollbar for Chrome/Safari */
 .applications-buttons::-webkit-scrollbar {
-    height: 6px;
+    display: none;
 }
 
-.applications-buttons::-webkit-scrollbar-track {
-    background: transparent;
+/* Scroll arrow buttons */
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: #10b981;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    transition: all 0.3s ease;
+    z-index: 20;
+    opacity: 1;
 }
 
-.applications-buttons::-webkit-scrollbar-thumb {
-    background: rgba(16, 185, 129, 0.3);
-    border-radius: 3px;
+.scroll-arrow-left {
+    left: 20px;
 }
 
-.applications-buttons::-webkit-scrollbar-thumb:hover {
-    background: rgba(16, 185, 129, 0.5);
+.scroll-arrow-right {
+    right: 20px;
 }
+
+.scroll-arrow.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scroll-arrow:hover {
+    background: #059669;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.scroll-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.scroll-arrow svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+/* Hide arrows and gradients on mobile where cards wrap */
+@media (max-width: 768px) {
+    .scroll-arrow {
+        display: none;
+    }
+    
+    .applications-buttons,
+    .problem-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .applications-section::before,
+    .applications-section::after,
+    .problem-section::before,
+    .problem-section::after {
+        display: none;
+    }
+}
+
 
  .application-card {
      width: 280px;
@@ -1416,17 +1476,6 @@ body {
         padding: clamp(40px, 8vw, 60px) clamp(15px, 5vw, 30px);
     }
 
-    /* Hide gradient fade on mobile when cards wrap */
-    .problem-content-wrapper::after {
-        display: none;
-    }
-    
-    .problem-content {
-        flex-wrap: wrap;
-        gap: 30px;
-        justify-content: center;
-    }
-
     .problem-card {
         width: 220px;
         min-width: 220px;
@@ -1454,17 +1503,6 @@ body {
 
     .applications-section {
         padding: clamp(40px, 8vw, 60px) clamp(15px, 5vw, 30px);
-    }
-    
-    /* Hide gradient fade on mobile when cards wrap */
-    .applications-buttons-wrapper::after {
-        display: none;
-    }
-    
-    .applications-buttons {
-        flex-wrap: wrap;
-        gap: 30px;
-        justify-content: center;
     }
     
     .application-card {

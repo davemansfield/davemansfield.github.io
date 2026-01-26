@@ -106,24 +106,32 @@
         
         <div class="problem-section scroll-animate">
             <h3 class="section-title section-title-centered">The Problem</h3>
-            <div class="problem-content-wrapper">
-                <div class="problem-content">
-                    <div class="problem-card">
-                        <h4 class="problem-title">Limited Spatiotemporal Data</h4>
-                        <p class="problem-description">Single robots measure one location at a time, forcing assumptions about spatial patterns. Real-world environments need simultaneous multi-point data.</p>
-                    </div>
-                    <div class="problem-card">
-                        <h4 class="problem-title">Limited Mission Time</h4>
-                        <p class="problem-description">Battery constraints and coverage limitations make solo robots slow. Critical tasks in complex environments take too long with individual systems.</p>
-                    </div>
-                    <div class="problem-card">
-                        <h4 class="problem-title">Single Points of Failure</h4>
-                        <p class="problem-description">One robot fails, mission fails. High-stakes environments can't afford this vulnerability with no backup plan.</p>
-                    </div>
-                    <div class="problem-card">
-                        <h4 class="problem-title">No Autonomous Exploration</h4>
-                        <p class="problem-description">Traditional robots need explicit instructions on where to go. Multiple reconnaissance missions waste time before real work begins.</p>
-                    </div>
+            <button class="scroll-arrow scroll-arrow-left hidden" data-target="problem" aria-label="Scroll back">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="scroll-arrow scroll-arrow-right" data-target="problem" aria-label="Scroll to see more">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <div class="problem-content">
+                <div class="problem-card">
+                    <h4 class="problem-title">Limited Spatiotemporal Data</h4>
+                    <p class="problem-description">Single robots measure one location at a time, forcing assumptions about spatial patterns. Real-world environments need simultaneous multi-point data.</p>
+                </div>
+                <div class="problem-card">
+                    <h4 class="problem-title">Limited Mission Time</h4>
+                    <p class="problem-description">Battery constraints and coverage limitations make solo robots slow. Critical tasks in complex environments take too long with individual systems.</p>
+                </div>
+                <div class="problem-card">
+                    <h4 class="problem-title">Single Points of Failure</h4>
+                    <p class="problem-description">One robot fails, mission fails. High-stakes environments can't afford this vulnerability with no backup plan.</p>
+                </div>
+                <div class="problem-card">
+                    <h4 class="problem-title">No Autonomous Exploration</h4>
+                    <p class="problem-description">Traditional robots need explicit instructions on where to go. Multiple reconnaissance missions waste time before real work begins.</p>
                 </div>
             </div>
         </div>
@@ -135,34 +143,42 @@
         
         <div class="applications-section scroll-animate">
             <h3 class="applications-heading">Our Applications</h3>
-            <div class="applications-buttons-wrapper">
-                <div class="applications-buttons">
-                    <button class="application-card" data-application="nuclear-decommissioning" aria-label="Learn more about Nuclear Decommissioning">
-                        <img src="assets/images/svgs/nuclear.svg" alt="Nuclear icon" class="app-icon" loading="lazy">
-                        <h4 class="app-title">Nuclear Decommissioning</h4>
-                        <p class="app-description">Simultaneous facility inspection and radiation mapping. Drastically reducing mission time while eliminating human exposure.</p>
-                    </button>
-                    <button class="application-card" data-application="environmental-monitoring" aria-label="Learn more about Environmental Monitoring">
-                        <img src="assets/images/svgs/env-monitoring.svg" alt="Environmental icon" class="app-icon" loading="lazy">
-                        <h4 class="app-title">Environmental Monitoring</h4>
-                        <p class="app-description">Autonomous teams gathering environmental data simultaneously from fields to cities. Coordinated sensing delivers comprehensive, dynamic environmental data, faster.</p>
-                    </button>
-                    <button class="application-card" data-application="gas-quantification" aria-label="Learn more about Gas Quantification">
-                        <img src="assets/images/svgs/gas-monitorign.svg" alt="Gas monitoring icon" class="app-icon" loading="lazy">
-                        <h4 class="app-title">Gas Quantification</h4>
-                        <p class="app-description">Coordinated gas monitoring for landfills, oil & gas, and energy facilities. Simultaneous measurements deliver detailed auditable, spatiotemporal data.</p>
-                    </button>
-                    <button class="application-card" data-application="agriculture" aria-label="Learn more about Agriculture">
-                        <img src="assets/images/svgs/farm-wheat-svgrepo-com.svg" alt="Agriculture icon" class="app-icon" loading="lazy">
-                        <h4 class="app-title">Agriculture</h4>
-                        <p class="app-description">Precision agriculture through coordinated swarms. Simultaneous crop monitoring, soil analysis, and targeted treatment. Autonomous field coverage for optimized yields and resource efficiency.</p>
-                    </button>
-                    <button class="application-card" data-application="search-and-rescue" aria-label="Learn more about Search and Rescue">
-                        <img src="assets/images/svgs/search-and-resuce.svg" alt="Search and rescue icon" class="app-icon" loading="lazy">
-                        <h4 class="app-title">Search and Rescue</h4>
-                        <p class="app-description">Rapid deployment swarms for emergency response operations. Coordinated search patterns covering large areas efficiently.</p>
-                    </button>
-                </div>
+            <button class="scroll-arrow scroll-arrow-left hidden" aria-label="Scroll back">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="scroll-arrow scroll-arrow-right" aria-label="Scroll to see more applications">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <div class="applications-buttons">
+                <button class="application-card" data-application="nuclear-decommissioning" aria-label="Learn more about Nuclear Decommissioning">
+                    <img src="assets/images/svgs/nuclear.svg" alt="Nuclear icon" class="app-icon" loading="lazy">
+                    <h4 class="app-title">Nuclear Decommissioning</h4>
+                    <p class="app-description">Simultaneous facility inspection and radiation mapping. Drastically reducing mission time while eliminating human exposure.</p>
+                </button>
+                <button class="application-card" data-application="environmental-monitoring" aria-label="Learn more about Environmental Monitoring">
+                    <img src="assets/images/svgs/env-monitoring.svg" alt="Environmental icon" class="app-icon" loading="lazy">
+                    <h4 class="app-title">Environmental Monitoring</h4>
+                    <p class="app-description">Autonomous teams gathering environmental data simultaneously from fields to cities. Coordinated sensing delivers comprehensive, dynamic environmental data, faster.</p>
+                </button>
+                <button class="application-card" data-application="gas-quantification" aria-label="Learn more about Gas Quantification">
+                    <img src="assets/images/svgs/gas-monitorign.svg" alt="Gas monitoring icon" class="app-icon" loading="lazy">
+                    <h4 class="app-title">Gas Quantification</h4>
+                    <p class="app-description">Coordinated gas monitoring for landfills, oil & gas, and energy facilities. Simultaneous measurements deliver detailed auditable, spatiotemporal data.</p>
+                </button>
+                <button class="application-card" data-application="agriculture" aria-label="Learn more about Agriculture">
+                    <img src="assets/images/svgs/farm-wheat-svgrepo-com.svg" alt="Agriculture icon" class="app-icon" loading="lazy">
+                    <h4 class="app-title">Agriculture</h4>
+                    <p class="app-description">Precision agriculture through coordinated swarms. Simultaneous crop monitoring, soil analysis, and targeted treatment. Autonomous field coverage for optimized yields and resource efficiency.</p>
+                </button>
+                <button class="application-card" data-application="search-and-rescue" aria-label="Learn more about Search and Rescue">
+                    <img src="assets/images/svgs/search-and-resuce.svg" alt="Search and rescue icon" class="app-icon" loading="lazy">
+                    <h4 class="app-title">Search and Rescue</h4>
+                    <p class="app-description">Rapid deployment swarms for emergency response operations. Coordinated search patterns covering large areas efficiently.</p>
+                </button>
             </div>
         </div>
         
