@@ -4,23 +4,23 @@
   <!-- Homepage -->
   <url>
     <loc>https://luneintelligentsystems.com/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Contact Page -->
   <url>
-    <loc>https://luneintelligentsystems.com/contact.html</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://luneintelligentsystems.com/contact/</loc>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Privacy Policy Page -->
   <url>
-    <loc>https://luneintelligentsystems.com/privacy.html</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://luneintelligentsystems.com/privacy/</loc>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
