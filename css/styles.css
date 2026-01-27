@@ -253,32 +253,6 @@ body {
     color: #d1fae5;
 }
 
-.university-tagline-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin: 30px 0;
-    flex-wrap: wrap;
-}
-
-.university-logo {
-    height: 80px;
-    width: auto;
-    opacity: 0.9;
-    filter: brightness(1.1);
-}
-
-.university-tagline {
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 0;
-    color: #86efac;
-    font-style: italic;
-    opacity: 0.9;
-    letter-spacing: 0.5px;
-}
-
 .explore-button {
     background: transparent;
     border: none;
@@ -454,6 +428,14 @@ body {
     margin: 0;
 }
 
+.who-are-we-university-tagline {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-weight: 500;
+    color: #10b981;
+    margin: 20px 0 0 0;
+    line-height: 1.4;
+}
+
 .who-are-we-right {
     text-align: left;
 }
@@ -563,36 +545,37 @@ body {
 /* Survey CTA Section */
 .survey-cta-section {
     width: 100%;
-    padding: clamp(10px, 2vw, 15px) clamp(20px, 5vw, 80px) clamp(40px, 6vw, 60px);
-    background: transparent;
+    padding: clamp(60px, 8vw, 100px) clamp(30px, 6vw, 100px);
+    background: #052e24;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    gap: 30px;
 }
 
 .survey-cta-text {
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-size: clamp(1.2rem, 2.2vw, 1.5rem);
     font-weight: 500;
-    color: #a7f3d0;
-    max-width: 700px;
+    color: #d1fae5;
+    max-width: 800px;
     margin: 0;
     line-height: 1.6;
 }
 
 .survey-button {
-    padding: 15px 40px;
+    padding: 18px 50px;
     border: 2px solid #10b981;
-    background: rgba(16, 185, 129, 0.15);
-    color: #d1fae5;
-    font-size: 1rem;
-    font-weight: 600;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(16, 185, 129, 0.15) 100%);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
-    border-radius: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
     position: relative;
     overflow: hidden;
 }
@@ -613,10 +596,11 @@ body {
 }
 
 .survey-button:hover {
-    background: #10b981;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.4) 0%, rgba(16, 185, 129, 0.3) 100%);
+    border-color: #4ade80;
     color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
 }
 
 .survey-button:active {
@@ -915,6 +899,11 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .team-member::before {
@@ -937,6 +926,28 @@ body {
     border-color: rgba(16, 185, 129, 0.4);
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(16, 185, 129, 0.15);
+}
+
+.team-linkedin-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #10b981;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.team-linkedin-icon svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.team-member:hover .team-linkedin-icon {
+    opacity: 1;
+    color: #4ade80;
+    transform: scale(1.1);
 }
 
 .team-headshot {
@@ -1105,6 +1116,51 @@ body {
     color: #a7f3d0;
 }
 
+/* Hero Survey Prompt */
+.hero-survey-prompt {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero-survey-text {
+    font-size: clamp(1.05rem, 1.8vw, 1.15rem);
+    color: #a7f3d0;
+    margin: 0;
+    font-weight: 400;
+}
+
+.hero-survey-link {
+    font-size: clamp(1.05rem, 1.8vw, 1.15rem);
+    color: #10b981;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.hero-survey-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #10b981;
+    transition: width 0.3s ease;
+}
+
+.hero-survey-link:hover {
+    color: #4ade80;
+}
+
+.hero-survey-link:hover::after {
+    width: 100%;
+}
+
 .linkedin-button-container {
     margin-top: 30px;
     display: flex;
@@ -1142,6 +1198,12 @@ body {
     max-width: 600px;
     margin: 0 auto;
     text-align: left;
+}
+
+/* Smaller description text on contact page */
+.contact-form ~ .form-message,
+.content:has(.contact-form) .description {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
 }
 
 .form-group {
@@ -1408,15 +1470,6 @@ body {
     .funding-label {
         font-size: 1rem;
     }
-
-    .university-tagline-container {
-        gap: 10px;
-        margin: 25px 0;
-    }
-
-    .university-logo {
-        height: 60px;
-    }
     
     .who-are-we-section {
         padding: clamp(60px, 10vw, 80px) clamp(15px, 5vw, 30px);
@@ -1429,6 +1482,11 @@ body {
 
     .who-are-we-tagline {
         font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    .who-are-we-university-tagline {
+        font-size: 1rem;
+        margin-top: 15px;
     }
 
     .who-are-we-description {
@@ -1451,17 +1509,17 @@ body {
     }
 
     .survey-cta-section {
-        padding: clamp(10px, 2vw, 15px) clamp(15px, 5vw, 30px) clamp(30px, 6vw, 40px);
-        gap: 20px;
+        padding: clamp(50px, 7vw, 70px) clamp(20px, 5vw, 40px);
+        gap: 25px;
     }
 
     .survey-cta-text {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .survey-button {
-        padding: 12px 30px;
-        font-size: 0.95rem;
+        padding: 15px 35px;
+        font-size: 1rem;
     }
 
     .applications-section {
@@ -1482,11 +1540,6 @@ body {
 
     .app-title {
         font-size: 1rem;
-    }
-
-
-    .university-tagline {
-        font-size: 0.9rem;
     }
 
     .team-heading {
@@ -1521,6 +1574,16 @@ body {
         font-size: 0.85rem;
     }
 
+    .team-linkedin-icon {
+        top: 12px;
+        right: 12px;
+    }
+
+    .team-linkedin-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
     .team-contact-button-container {
         margin-top: 30px;
     }
@@ -1537,6 +1600,16 @@ body {
     .email-form input,
     .email-form button {
         width: 100%;
+    }
+
+    .hero-survey-prompt {
+        margin-top: 20px;
+        gap: 10px;
+    }
+
+    .hero-survey-text,
+    .hero-survey-link {
+        font-size: 1rem;
     }
 
     .linkedin-button {
