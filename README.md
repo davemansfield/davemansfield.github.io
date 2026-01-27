@@ -1,66 +1,75 @@
-# Coming Soon Website
+# Lune Intelligent Systems
 
-A simple, modern coming soon page for your business.
+Official website for Lune Intelligent Systems - pioneering autonomous swarm robotics for extreme environments.
 
-## Publishing to GitHub Pages
+## About
 
-Follow these steps to publish your website to GitHub Pages:
+Lune Intelligent Systems develops autonomous swarms that think, adapt, and act together. Our systems enable multiple robots to coordinate as a unified team, exploring uncertain and extreme environments, responding dynamically to change, and making intelligent decisions through distributed AI.
 
-### Step 1: Create a GitHub Repository
+## Website Features
 
-1. Go to [GitHub](https://github.com) and sign in
-2. Click the "+" icon in the top right and select "New repository"
-3. Name your repository (e.g., `my-business-website` or `coming-soon`)
-4. Make it **Public** (required for free GitHub Pages)
-5. **Don't** initialize with README, .gitignore, or license
-6. Click "Create repository"
+- **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
+- **Interactive Swarm Animation**: Dynamic boids-based swarm visualization on the homepage
+- **Accessibility**: WCAG 2.1 compliant with keyboard navigation and screen reader support
+- **Cookie Consent**: GDPR-compliant cookie management via Cookiebot
+- **Analytics**: Privacy-focused analytics using Microsoft Clarity
+- **Contact Forms**: Integrated with Formspree for email notifications
 
-### Step 2: Initialize Git and Push Your Code
+## Technology Stack
 
-Open your terminal in this directory and run:
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Animation**: Canvas API with custom boids algorithm
+- **Forms**: Formspree integration
+- **Hosting**: GitHub Pages
+- **Analytics**: Microsoft Clarity
+- **Cookie Consent**: Cookiebot
 
-```bash
-# Initialize git repository
-git init
+## Project Structure
 
-# Add all files
-git add .
+```
+/
+├── index.html              # Homepage
+├── contact/
+│   └── index.html          # Contact page
+├── privacy/
+│   └── index.html          # Privacy policy
+├── css/
+│   └── styles.css          # Main stylesheet
+├── js/
+│   ├── script.js           # Homepage functionality
+│   ├── contact.js          # Contact form handling
+│   └── swarm.js            # Swarm animation engine
+├── assets/
+│   └── images/             # Site images and logos
+├── robots.txt              # Search engine crawling instructions
+└── sitemap.xml             # Site map for SEO
 
-# Make your first commit
-git commit -m "Initial commit: Coming soon website"
-
-# Add your GitHub repository as remote (replace YOUR_USERNAME and YOUR_REPO_NAME)
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-
-# Rename branch to main (if needed)
-git branch -M main
-
-# Push to GitHub
-git push -u origin main
 ```
 
-### Step 3: Enable GitHub Pages
+## Local Development
 
-1. Go to your repository on GitHub
-2. Click on **Settings** (top menu)
-3. Scroll down to **Pages** in the left sidebar
-4. Under **Source**, select:
-   - Branch: `main`
-   - Folder: `/ (root)`
-5. Click **Save**
+To run this website locally:
 
-### Step 4: Access Your Website
+1. Clone the repository
+2. Open `index.html` in a web browser, or
+3. Use a local server (recommended):
+   ```bash
+   python -m http.server 8000
+   # or
+   npx serve
+   ```
 
-Your website will be available at:
-```
-https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
-```
+## Browser Support
 
-It may take a few minutes for the site to go live after enabling Pages.
+- Chrome/Edge (latest 2 versions)
+- Firefox (latest 2 versions)
+- Safari (latest 2 versions)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
-## Customization
+## License
 
-- Edit `index.html` to change the business name and text
-- Edit `script.js` to update the launch date (line 2)
-- Edit `styles.css` to customize colors and styling
+© 2024-2026 Lune Intelligent Systems. All rights reserved.
 
+## Contact
+
+For inquiries, visit [luneintelligentsystems.com/contact](https://luneintelligentsystems.com/contact)

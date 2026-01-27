@@ -9,7 +9,6 @@ Allow: /
 Disallow: /*.json$
 Disallow: /*.txt$
 Disallow: /README.md
-Disallow: /FORMSFREE_SETUP.md
 
 # Don't index these directories (if they contain development files)
 Disallow: /js/
