@@ -1441,6 +1441,20 @@ body {
         min-height: calc(100vh - 70px); /* Adjust for smaller header on mobile */
     }
 
+    /* Enhanced text visibility on mobile with brighter swarm background */
+    .content:has(#swarm-canvas) .heading {
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .content:has(#swarm-canvas) .description {
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 3px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .content:has(#swarm-canvas) .email-form input {
+        background: rgba(20, 45, 30, 0.8);
+        backdrop-filter: blur(8px);
+    }
+
     .team-section {
         padding: clamp(40px, 8vw, 60px) clamp(15px, 5vw, 30px);
     }

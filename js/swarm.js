@@ -348,8 +348,10 @@ class SwarmAnimation {
                                     Math.sin(boid.position.y * 0.1) * (1 - depth) * 0.4;
             const finalAngle = boid.angle + depthAngleOffset;
             
-            // Size based on depth - made bigger for better mobile visibility
-            const sizeScale = (0.5 + 1.5 * depth) * this.scale * 1.5;
+            // Size based on depth - responsive sizing for better mobile visibility
+            const isMobile = window.innerWidth <= 768;
+            const mobileSizeMultiplier = isMobile ? 2.2 : 1.5; // Much larger on mobile
+            const sizeScale = (0.5 + 1.5 * depth) * this.scale * mobileSizeMultiplier;
             
             // Calculate morphing phase for this boid
             const morphPhase = this.frame * 0.02 * boid.morphSpeed + boid.morphOffset;
@@ -365,15 +367,17 @@ class SwarmAnimation {
             const cos = Math.cos(finalAngle);
             const sin = Math.sin(finalAngle);
             
-            // Opacity - increased for better mobile visibility
-            const baseAlpha = 0.5 + 0.5 * depth;
+            // Opacity - significantly increased for mobile visibility
+            const mobileAlphaBoost = isMobile ? 0.4 : 0; // Extra opacity on mobile
+            const baseAlpha = 0.5 + 0.5 * depth + mobileAlphaBoost;
             const fadeTime = this.frame * 0.05 * boid.fadeSpeed + boid.fadeOffset;
             const fadeFactor = 0.6 + 0.4 * (0.5 + 0.5 * Math.sin(fadeTime));
-            const alpha = baseAlpha * fadeFactor;
+            const alpha = Math.min(baseAlpha * fadeFactor, 0.95); // Cap at 0.95
             
-            // Color intensity - brighter for mobile visibility
+            // Color intensity - much brighter on mobile for better visibility
+            const mobileBrightnessBoost = isMobile ? 0.4 : 0;
             const colorIntensity = 0.7 + 0.3 * depth;
-            const brightness = 0.7 + 0.3 * colorIntensity;
+            const brightness = 0.7 + 0.3 * colorIntensity + mobileBrightnessBoost;
             const r = Math.floor(this.baseGreen.r * brightness);
             const g = Math.floor(this.baseGreen.g * brightness);
             const b = Math.floor(this.baseGreen.b * brightness);
