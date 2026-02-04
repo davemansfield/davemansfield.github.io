@@ -443,6 +443,18 @@ body {
     line-height: 1.4;
 }
 
+.lancaster-research-link {
+    color: #10b981;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.lancaster-research-link:hover {
+    color: #4ade80;
+    text-decoration: underline;
+}
+
 .who-are-we-right {
     text-align: left;
 }
@@ -859,10 +871,45 @@ body {
     font-weight: 500;
     color: #86efac;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-style: italic;
     opacity: 0.9;
     letter-spacing: 0.3px;
+}
+
+.team-research-link-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.team-research-link {
+    font-size: 1rem;
+    color: #10b981;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.team-research-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #10b981;
+    transition: width 0.3s ease;
+}
+
+.team-research-link:hover {
+    color: #4ade80;
+}
+
+.team-research-link:hover::after {
+    width: 100%;
 }
 
 .team-scroll {
@@ -1570,6 +1617,14 @@ body {
 
     .team-heading {
         margin-bottom: 20px;
+    }
+
+    .team-research-link-container {
+        margin-bottom: 30px;
+    }
+
+    .team-research-link {
+        font-size: 0.95rem;
     }
 
     .team-scroll {
