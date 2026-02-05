@@ -443,6 +443,26 @@ body {
     line-height: 1.4;
 }
 
+.lancaster-research-link {
+    color: #10b981;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.lancaster-research-link:visited {
+    color: #10b981;
+}
+
+.lancaster-research-link:hover {
+    color: #4ade80;
+    text-decoration: underline;
+}
+
+.lancaster-research-link:active {
+    color: #059669;
+}
+
 .who-are-we-right {
     text-align: left;
 }
@@ -1099,7 +1119,7 @@ body {
     border: none;
     border-bottom: 2px solid rgba(16, 185, 129, 0.4);
     font-size: 1rem;
-    background: rgba(20, 45, 30, 0.4);
+    background: rgba(20, 45, 30, 0.8);
     color: #d1fae5;
     outline: none;
     transition: all 0.3s ease;
@@ -1107,7 +1127,7 @@ body {
 
 .email-form input:focus {
     border-bottom-color: #10b981;
-    background: rgba(20, 45, 30, 0.6);
+    background: rgba(20, 45, 30, 0.9);
 }
 
 .email-form input::placeholder {
@@ -1267,7 +1287,7 @@ body {
     border: none;
     border-bottom: 2px solid rgba(16, 185, 129, 0.4);
     font-size: 1rem;
-    background: rgba(20, 45, 30, 0.4);
+    background: rgba(20, 45, 30, 0.8);
     color: #d1fae5;
     outline: none;
     transition: all 0.3s ease;
@@ -1278,7 +1298,7 @@ body {
 .form-group input:focus,
 .form-group textarea:focus {
     border-bottom-color: #10b981;
-    background: rgba(20, 45, 30, 0.6);
+    background: rgba(20, 45, 30, 0.9);
 }
 
 .form-group input::placeholder,
