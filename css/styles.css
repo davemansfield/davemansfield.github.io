@@ -521,7 +521,7 @@ body {
     width: 280px;
     min-width: 280px;
     padding: 20px 20px;
-    background: transparent;
+    background: #000000;
     border: none;
     text-align: center;
     display: flex;
@@ -763,7 +763,7 @@ body {
      width: 280px;
      min-width: 280px;
      padding: 20px 20px;
-     background: transparent;
+     background: #ffffff;
      border: none;
      text-decoration: none;
      text-align: center;
