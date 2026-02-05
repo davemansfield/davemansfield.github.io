@@ -443,18 +443,6 @@ body {
     line-height: 1.4;
 }
 
-.lancaster-research-link {
-    color: #10b981;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    cursor: pointer;
-}
-
-.lancaster-research-link:hover {
-    color: #4ade80;
-    text-decoration: underline;
-}
-
 .who-are-we-right {
     text-align: left;
 }
@@ -471,7 +459,7 @@ body {
 .problem-section {
     width: 100%;
     padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 80px);
-    background: transparent;
+    background: #000000;
     position: relative;
 }
 
